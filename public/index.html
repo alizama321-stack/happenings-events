@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Happenings — Karachi wedding decoration, venues, catering & event planning. Browse packages, get instant estimates on WhatsApp.">
+<title>Happenings — Wedding Decor, Venues & Catering · Karachi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#F5F0EA;color:#1A1A2E;font-family:'Outfit',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+::selection{background:#A05050;color:#fff}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #A05050;outline-offset:2px}
+
+/* Progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#C8956B,#A05050);z-index:999;width:0;pointer-events:none;transition:width .15s linear}
+
+/* NAV */
+nav{position:fixed;top:3px;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;background:rgba(245,240,234,0);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.4s}
+nav.scrolled{background:rgba(245,240,234,.97);border-color:rgba(26,26,46,.08);box-shadow:0 2px 20px rgba(26,26,46,.06)}
+.wm{font-family:'Playfair Display',serif;font-size:25px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#000}
+.wm span{display:block;font-size:9px;letter-spacing:.3em;color:#C8956B;font-family:'Outfit';font-weight:400;margin-top:1px}
+.nlinks{display:flex;gap:26px;align-items:center}
+.nlinks a{color:#0f0c0c;text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;opacity:.7;transition:.3s;font-weight:500}
+.nlinks a:hover{opacity:1}
+.btn{display:inline-block;border:none;text-decoration:none;font-size:11px;letter-spacing:.22em;text-transform:uppercase;padding:13px 26px;transition:.3s;font-weight:500;cursor:pointer;font-family:'Outfit',sans-serif}
+.btn-rose{background:#A05050;color:#fff}
+.btn-rose:hover{background:#1A1A2E}
+.btn-dark{background:#1A1A2E;color:#F5F0EA}
+.btn-dark:hover{background:#A05050}
+.btn-line{background:transparent;border:1px solid #1A1A2E;color:#1A1A2E}
+.btn-line:hover{background:#1A1A2E;color:#F5F0EA}
+
+/* HERO */
+header{min-height:94vh;display:flex;align-items:flex-end;position:relative;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:-15%;z-index:0;will-change:transform}
+.hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(175deg,rgba(26,26,46,.38) 0%,rgba(26,26,46,.06) 35%,rgba(245,240,234,.92) 75%,#F5F0EA 95%)}
+.hero-inner{width:100%;padding:160px 5vw 44px;position:relative;z-index:2}
+h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(40px,6vw,78px);line-height:1.06;max-width:15ch;color:#1A1A2E;text-shadow:0 1px 24px rgba(245,240,234,.5)}
+h1 em{font-style:italic;color:#A05050}
+.hero-sub{max-width:50ch;margin-top:16px;font-size:16px;color:#4D4B5C;line-height:1.7}
+@keyframes heroIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+.hero-anim{opacity:0;animation:heroIn 1s ease forwards}
+
+/* SEARCH */
+.search{margin-top:30px;background:rgba(255,252,246,.88);backdrop-filter:blur(14px);border:1px solid rgba(26,26,46,.06);box-shadow:0 22px 60px rgba(26,26,46,.09);display:grid;grid-template-columns:1.4fr 1fr 1fr auto;max-width:860px}
+.search > div{padding:14px 18px;border-right:1px solid rgba(26,26,46,.06);display:flex;flex-direction:column;gap:2px}
+.search label{font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:#C8956B}
+.search select{border:none;background:transparent;font-family:'Outfit';font-size:14px;color:#1A1A2E;padding:2px 0}
+.search button{border:none;background:#1A1A2E;color:#F5F0EA;padding:0 30px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:.3s;font-family:'Outfit'}
+.search button:hover{background:#A05050}
+
+/* CHIPS */
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.chip{border:1px solid rgba(26,26,46,.12);background:rgba(255,252,246,.8);padding:8px 16px;font-size:12px;letter-spacing:.05em;border-radius:30px;cursor:pointer;transition:.25s;color:#4D4B5C;font-family:'Outfit'}
+.chip.on{background:#1A1A2E;color:#F5F0EA;border-color:#1A1A2E}
+
+/* SECTION */
+section{padding:100px 5vw}
+.diamond{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px}
+.diamond .l{width:40px;height:1px;background:#C8956B}
+.diamond .d{width:6px;height:6px;background:#C8956B;transform:rotate(45deg)}
+.sec-title{text-align:center;margin-bottom:50px}
+h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,48px);line-height:1.12}
+h2 em{font-style:italic;color:#A05050}
+.sec-sub{max-width:54ch;margin:14px auto 0;font-size:14.5px;color:#4D4B5C;line-height:1.7}
+
+/* GRID */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+
+/* PACKAGE CARD */
+.pcard{background:#FFFCF6;border:1px solid rgba(26,26,46,.06);display:flex;flex-direction:column;transition:transform .35s,box-shadow .35s}
+.pcard:hover{transform:translateY(-6px);box-shadow:0 22px 60px rgba(26,26,46,.12)}
+.pcard .ph{aspect-ratio:4/3.4;overflow:hidden;position:relative}
+.pcard .ph img{transition:transform .7s}
+.pcard:hover .ph img{transform:scale(1.05)}
+.ptag{position:absolute;top:14px;left:14px;background:rgba(26,26,46,.85);color:#FFFCF6;font-size:10px;letter-spacing:.2em;text-transform:uppercase;padding:6px 12px}
+.pcard .tx{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+.pcard h3{font-family:'Playfair Display',serif;font-size:26px;font-weight:500}
+.pcard .meta{font-size:12px;color:#4D4B5C;margin:6px 0 10px}
+.pcard .price{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:#A05050;margin-bottom:14px}
+.pcard .btns{margin-top:auto;display:flex;gap:10px}
+.pcard .btns>*{flex:1;text-align:center;padding:12px 8px;font-size:10px;letter-spacing:.2em}
+
+/* VENUE */
+.alt-bg{background:#EDE9E1}
+.vcard{background:#FFFCF6;border:1px solid rgba(26,26,46,.06);transition:transform .35s,box-shadow .35s}
+.vcard:hover{transform:translateY(-6px);box-shadow:0 22px 60px rgba(26,26,46,.10)}
+.vcard .ph{aspect-ratio:4/2.6;overflow:hidden}
+.vcard .ph img{transition:transform .7s}
+.vcard:hover .ph img{transform:scale(1.04)}
+.vcard .tx{padding:20px 22px 24px}
+.vcard h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:500}
+.vrow{display:flex;justify-content:space-between;font-size:12.5px;color:#4D4B5C;padding:7px 0;border-bottom:1px solid rgba(26,26,46,.08)}
+.vrow b{color:#1A1A2E;font-weight:500}
+
+/* CATERING */
+.ccard{background:#FFFCF6;border:1px solid rgba(26,26,46,.06);padding:30px}
+.ccard h3{font-family:'Playfair Display',serif;font-size:25px;font-weight:500}
+.ccard .per{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#A05050;margin:4px 0 14px}
+.ccard li{list-style:none;font-size:13.5px;color:#4D4B5C;padding:6px 0;border-top:1px solid rgba(26,26,46,.08)}
+.ccard li:first-child{border-top:none}
+.csel{width:100%;padding:11px;border:1px solid rgba(26,26,46,.08);background:#F5F0EA;font-family:'Outfit';font-size:13px;color:#1A1A2E;margin-top:14px}
+.ccost{margin-top:12px;font-size:14px}
+.ccost b{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#1A1A2E}
+
+/* ESTIMATOR */
+.est{background:#1A1A2E;color:#FFFCF6}
+.est h2{color:#FFFCF6}
+.est h2 em{color:#C8956B}
+.est-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
+.efl{margin-bottom:18px}
+.efl label{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#C8956B;margin-bottom:7px}
+.efl select,.efl input[type=number]{width:100%;padding:13px 14px;background:rgba(245,240,234,.07);border:1px solid rgba(245,240,234,.22);color:#FFFCF6;font-family:'Outfit';font-size:14px}
+.efl select option{color:#1A1A2E}
+.efl input[type=range]{width:100%;accent-color:#C8956B}
+.gval{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:#C8956B}
+.addg{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.addg label{display:flex;gap:9px;align-items:center;font-size:13px;color:rgba(245,240,234,.85);background:rgba(245,240,234,.06);border:1px solid rgba(245,240,234,.16);padding:10px 12px;cursor:pointer}
+.addg input{accent-color:#C8956B}
+.est-out{background:rgba(245,240,234,.06);border:1px solid rgba(245,240,234,.2);padding:34px;position:sticky;top:90px}
+.est-out h3{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#C8956B;font-weight:400}
+.est-total{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(28px,3.4vw,42px);margin:14px 0 4px;color:#FFFCF6}
+.est-sub{font-size:12.5px;color:rgba(245,240,234,.6)}
+.est-lines div{display:flex;justify-content:space-between;padding:7px 0;border-top:1px solid rgba(245,240,234,.14);color:rgba(245,240,234,.85);font-size:13px}
+.est-disc{font-size:11px;color:rgba(245,240,234,.45);margin-top:14px;letter-spacing:.04em}
+
+/* GALLERY */
+.gtab{border:1px solid rgba(26,26,46,.12);background:transparent;padding:9px 18px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#4D4B5C;cursor:pointer;transition:.25s;font-family:'Outfit'}
+.gtab.on{background:#1A1A2E;color:#F5F0EA;border-color:#1A1A2E}
+.masonry{column-count:3;column-gap:18px}
+.gitem{break-inside:avoid;margin-bottom:18px;position:relative;overflow:hidden}
+.gitem img{transition:transform .6s}
+.gitem:hover img{transform:scale(1.04)}
+.gitem figcaption{position:absolute;bottom:0;left:0;right:0;padding:30px 16px 12px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:linear-gradient(transparent,rgba(26,26,46,.7))}
+
+/* TESTIMONIALS */
+.tcard{border:1px solid rgba(26,26,46,.06);background:#FFFCF6;padding:30px}
+.tcard .stars{color:#C8956B;letter-spacing:3px;font-size:14px}
+.tcard p{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;line-height:1.5;margin:14px 0 18px;color:#1A1A2E}
+.tcard .who{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#4D4B5C}
+
+/* QUOTE */
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.qform{background:#FFFCF6;border:1px solid rgba(26,26,46,.06);padding:36px;box-shadow:0 22px 60px rgba(26,26,46,.08)}
+.qform label{display:block;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#C8956B;margin-bottom:7px}
+.qform input,.qform select{width:100%;padding:13px 14px;border:1px solid rgba(26,26,46,.08);background:#F5F0EA;font-family:'Outfit';font-size:14px;color:#1A1A2E;margin-bottom:18px}
+
+/* MODAL */
+.modal-wrap{position:fixed;inset:0;z-index:80;background:rgba(26,26,46,.5);display:none;align-items:center;justify-content:center;padding:4vw;backdrop-filter:blur(4px)}
+.modal-wrap.open{display:flex}
+.modal{background:#FFFCF6;max-width:880px;width:100%;max-height:88vh;overflow:auto;display:grid;grid-template-columns:1fr 1.1fr}
+.modal .ph{min-height:320px}
+.modal h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:500}
+.modal .price{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:#A05050;margin:6px 0 18px}
+.modal h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#C8956B;margin:18px 0 8px;font-weight:400}
+.modal .specs{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;font-size:13px;color:#4D4B5C}
+.modal .specs b{color:#1A1A2E;font-weight:500}
+.modal li{list-style:none;font-size:13.5px;color:#4D4B5C;padding:6px 0;border-top:1px solid rgba(26,26,46,.08)}
+.modal li:first-child{border-top:none}
+.mclose{position:sticky;top:0;float:right;background:#1A1A2E;color:#F5F0EA;border:none;width:38px;height:38px;font-size:16px;cursor:pointer;transition:.3s;z-index:2}
+.mclose:hover{background:#A05050}
+
+footer{background:#1A1A2E;color:rgba(245,240,234,.65);padding:50px 5vw;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;align-items:center}
+footer .wm{color:#FFFCF6}
+
+.wa-fab{position:fixed;right:22px;bottom:22px;z-index:70;background:#25D366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(26,26,46,.3);text-decoration:none;transition:transform .25s}
+.wa-fab:hover{transform:scale(1.1)}
+.wa-fab svg{width:30px;height:30px;fill:#fff}
+
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+[data-reveal].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}.hero-anim{animation:none;opacity:1}html{scroll-behavior:auto}}
+@media(max-width:980px){.nlinks a:not(.btn-rose){display:none}.g3{grid-template-columns:1fr 1fr}.masonry{column-count:2}.search{grid-template-columns:1fr 1fr}.search button{grid-column:1/-1;padding:14px}.est-grid{grid-template-columns:1fr}.est-out{position:static}.qgrid{grid-template-columns:1fr}.modal{grid-template-columns:1fr;max-height:92vh}.modal .ph{min-height:220px}}
+@media(max-width:600px){.g3{grid-template-columns:1fr}.masonry{column-count:1}section{padding:80px 6vw}.addg{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav id="nav">
+  <div class="wm">Happenings<span>florals by FlowerArt</span></div>
+  <div class="nlinks">
+    <a href="#packages">Packages</a><a href="#venues">Venues</a><a href="#catering">Catering</a><a href="#estimator">Estimator</a><a href="#gallery">Gallery</a>
+    <a class="btn btn-rose" href="#quote">Get Instant Quote</a>
+  </div>
+</nav>
+
+<header>
+  <div class="hero-bg" id="hero-bg"><img id="hero-img" alt="Luxury wedding stage by Happenings"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-inner">
+    <p class="hero-anim" style="font-size:11px;letter-spacing:.35em;text-transform:uppercase;color:#C8956B;animation-delay:.2s">Karachi · Decor · Venues · Florals · Catering</p>
+    <h1 class="hero-anim" style="margin-top:12px;animation-delay:.45s">Plan your entire wedding <em>without a single phone call.</em></h1>
+    <p class="hero-sub hero-anim" style="animation-delay:.65s">Browse decoration packages, compare venues, add catering and get an instant budget estimate — then confirm everything on WhatsApp in one message.</p>
+    <div class="search hero-anim" style="animation-delay:.85s">
+      <div><label>Event Type</label><select id="s-type"><option value="">All events</option><option>Wedding / Shaadi</option><option>Mehndi &amp; Mayun</option><option>Barat</option><option>Walima</option><option>Nikkah &amp; Engagement</option><option>Bridal Room</option><option>Birthday</option><option>Corporate</option></select></div>
+      <div><label>Guests</label><select><option>Up to 150</option><option selected>150 – 400</option><option>400 – 800</option><option>800+</option></select></div>
+      <div><label>Budget</label><select><option>Under Rs 150k</option><option selected>Rs 150k – 300k</option><option>Rs 300k+</option></select></div>
+      <button onclick="document.getElementById('packages').scrollIntoView({behavior:'smooth'})">Search</button>
+    </div>
+    <div class="chips hero-anim" style="animation-delay:1s" id="chips"></div>
+  </div>
+</header>
+
+<section id="packages">
+  <div class="diamond" data-reveal><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  <div class="sec-title" data-reveal><h2>Featured <em>decoration packages</em></h2><p class="sec-sub">Transparent starting prices. Every package is customizable — tap a card for full inclusions.</p></div>
+  <div class="g3" id="pkg-grid"></div>
+</section>
+
+<section class="alt-bg" id="venues">
+  <div class="diamond" data-reveal><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  <div class="sec-title" data-reveal><h2>Venue <em>directory</em></h2><p class="sec-sub">Browse partner venues with capacity, location and decoration compatibility — request a combined quote in one tap.</p></div>
+  <div class="g3" id="venue-grid"></div>
+</section>
+
+<section id="catering">
+  <div class="diamond" data-reveal><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  <div class="sec-title" data-reveal><h2>Add <em>catering</em> to your event</h2><p class="sec-sub">Per-head menus from trusted caterers. Select guests and see live costs — add it straight into your estimate below.</p></div>
+  <div class="g3" id="cat-grid"></div>
+</section>
+
+<section class="est" id="estimator">
+  <div class="diamond" data-reveal><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  <div class="sec-title" data-reveal><h2>Instant <em>budget estimator</em></h2><p class="sec-sub" style="color:rgba(245,240,234,.7)">Build your event below. The estimate updates live — send the whole configuration to us on WhatsApp.</p></div>
+  <div class="est-grid">
+    <div>
+      <div class="efl"><label>Event Type</label><select id="e-type" onchange="calc()"><option>Wedding / Shaadi</option><option>Mehndi &amp; Mayun</option><option>Barat</option><option selected>Walima</option><option>Nikkah &amp; Engagement</option><option>Bridal Room Decoration</option><option>Birthday</option><option>Corporate Event</option></select></div>
+      <div class="efl"><label>Decoration Package</label><select id="e-pkg" onchange="calc()"></select></div>
+      <div class="efl"><label>Venue</label><select id="e-venue" onchange="calc()"></select></div>
+      <div class="efl"><label>Flower Type</label><select id="e-flower" onchange="calc()"><option value="1">Premium Silk / Artificial</option><option value="1.15" selected>Fresh Local (by FlowerArt)</option><option value="1.4">Fresh Imported (by FlowerArt)</option></select></div>
+      <div class="efl"><label>Guest Count — <span class="gval" id="e-gval">300</span></label><input type="range" id="e-guests" min="50" max="1000" step="25" value="300" oninput="calc()"></div>
+      <div class="efl"><label>Catering Package</label><select id="e-cat" onchange="calc()"></select></div>
+      <div class="efl"><label>Additional Services</label><div class="addg" id="e-addons"></div></div>
+    </div>
+    <div class="est-out" data-reveal>
+      <h3>Estimated Budget Range</h3>
+      <div class="est-total" id="est-total">Rs 0 – 0</div>
+      <div class="est-sub">Estimate only — final quote on WhatsApp</div>
+      <div id="est-lines" style="margin:20px 0"></div>
+      <a class="btn btn-rose" id="est-wa" href="#" target="_blank" rel="noopener" style="display:block;width:100%;text-align:center">Send to WhatsApp</a>
+      <p class="est-disc">Tap the button — your full configuration is pre-written in the message.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="diamond" data-reveal><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  <div class="sec-title" data-reveal><h2>Real events, <em>real clients</em></h2><p class="sec-sub">Every photo below is our own work — no stock, no borrowed images.</p></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px" id="gtabs"></div>
+  <div class="masonry" id="gal"></div>
+</section>
+
+<section class="alt-bg">
+  <div class="diamond" data-reveal><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  <div class="sec-title" data-reveal><h2>What families <em>say</em></h2></div>
+  <div class="g3">
+    <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"They handled our Mehndi and Walima both — two completely different moods, one team. Zero stress."</p><div class="who">Bride's Family · DHA Karachi</div></div>
+    <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"The fresh flowers from FlowerArt were the difference. Guests kept asking who did the stage."</p><div class="who">Walima · Clifton</div></div>
+    <div class="tcard" data-reveal><div class="stars">★★★★★</div><p>"We sent our budget on WhatsApp and had a full plan with venue and catering by evening."</p><div class="who">Barat · PECHS</div></div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="qgrid">
+    <div>
+      <div class="diamond" data-reveal style="justify-content:flex-start"><div class="l"></div><div class="d"></div></div>
+      <p data-reveal style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#C8956B">Instant Quotation</p>
+      <h2 data-reveal style="margin-top:8px">Your quote, <em>before you finish your chai.</em></h2>
+      <p data-reveal class="sec-sub" style="margin-top:14px;max-width:46ch">Fill the form — it opens WhatsApp with everything pre-written. We reply with availability, ideas and a clear price during business hours.</p>
+    </div>
+    <div class="qform" data-reveal>
+      <label>Your Name</label><input id="q-name" type="text" placeholder="e.g. Ayesha Khan">
+      <label>Event Type</label><select id="q-type"><option>Wedding / Shaadi</option><option>Mehndi &amp; Mayun</option><option>Barat</option><option>Walima</option><option>Nikkah &amp; Engagement</option><option>Bridal Room</option><option>Birthday</option><option>Corporate</option></select>
+      <label>Tentative Date</label><input id="q-date" type="text" placeholder="e.g. 14 December 2026">
+      <label>Expected Guests</label><input id="q-guests" type="number" placeholder="300" min="20">
+      <button class="btn btn-dark" style="width:100%" onclick="quickQuote()">Get Instant Quote on WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wm">Happenings<span>florals by FlowerArt</span></div>
+  <p style="font-size:11px;letter-spacing:.14em">Karachi · Weddings · Events · Florals · @happenings.co · @flowerart.pk</p>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/923302894915?text=Salam!%20I%27d%20like%20to%20plan%20an%20event%20with%20Happenings." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 .8C7.6.8.8 7.6.8 16c0 2.7.7 5.3 2 7.6L.8 31.2l7.8-2c2.2 1.2 4.7 1.9 7.4 1.9 8.4 0 15.2-6.8 15.2-15.2S24.4.8 16 .8zm0 27.7c-2.4 0-4.7-.7-6.7-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5c-1.3-2-2-4.4-2-6.8C3.1 8.9 8.9 3.1 16 3.1S28.9 8.9 28.9 16 23.1 28.5 16 28.5zm7.1-9.3c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.3-.4.3-.8.1-.4-.2-1.6-.6-3.1-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.2.3-.4.4-.7.1-.3.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 1 .4 1.7.7 2.3.9 1 .3 1.9.3 2.6.2.8-.1 2.3-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.2-.3-.3-.7-.5z"/></svg>
+</a>
+
+<div class="modal-wrap" id="modal-wrap" onclick="if(event.target===this)closeModal()">
+  <div class="modal"><div class="ph"><img id="m-img" alt=""></div><div style="padding:34px"><button class="mclose" onclick="closeModal()">✕</button><h3 id="m-name"></h3><div class="price" id="m-price"></div><div class="specs" id="m-specs"></div><h4>Inclusions</h4><ul id="m-inc"></ul><h4>Custom Add-ons</h4><ul id="m-add"></ul><a class="btn btn-rose" id="m-wa" href="#" target="_blank" rel="noopener" style="display:block;width:100%;text-align:center;margin-top:22px">Inquire on WhatsApp</a></div></div>
+</div>
+
+<script>
+const WA='923302894915', fmt=n=>'Rs '+n.toLocaleString('en-PK');
+const PKGS=[
+{id:'signature',cat:'wedding',name:'Signature Stage',img:'hero',price:145000,sty:'White & gold editorial',cap:'Up to 400 guests',venues:'Banquet · Marquee · Lawn',flowers:'Fresh white florals + greens',inc:['Full stage with floral spheres','Draped backdrop + gold frames','Aisle styling with candles','Couple seating + cushions','Entrance arrangement','On-ground team'],add:['Chandelier cluster — Rs 30,000','Extended aisle florals — Rs 22,000','Cold pyros entry — Rs 35,000']},
+{id:'barat',cat:'barat',name:'Royal Barat',img:'baraat',price:225000,sty:'Crimson, black & gold drama',cap:'Up to 800 guests',venues:'Marquee · Open ground',flowers:'Fresh red & white roses',inc:['Red canopy ceiling with fairy lights','Multiple chandelier clusters','Floral pillar stage','Guest table centerpieces','Couple stage + sofa set','Full lighting design'],add:['LED dance floor — Rs 60,000','Dhol & welcome entry — Rs 22,000','Fireworks finale — Rs 45,000']},
+{id:'walima',cat:'walima',name:'Candlelight Walima',img:'valima',price:195000,sty:'Bronze, candlelight & velvet',cap:'Up to 500 guests',venues:'Banquet · Rooftop · Lawn',flowers:'Fresh ivory roses + baby breath',inc:['Long-table royal dining setup','Candelabras + lanterns throughout','Draped ceiling treatment','Gold cutlery + charger plates','Fresh floral runners','Ambient lighting'],add:['Live qawwali corner setup — Rs 40,000','Photo booth wall — Rs 28,000','Imported candle upgrade — Rs 18,000']},
+{id:'mehndi',cat:'mehndi',name:'Grand Mehndi',img:'mehndi',price:165000,sty:'Vivid, playful & desi',cap:'Up to 600 guests',venues:'Lawn · Marquee',flowers:'Genda phool + mixed brights',inc:['Ludo-print dance floor','Hanging floral ceiling + umbrellas','Gajra station for guests','Stage with traditional jharokas','Bean seating + props','Dhol-ready sound layout'],add:['Mehndi artist corner — Rs 15,000','Chaat & gola ganda carts — Rs 35,000','Extra rain cover — Rs 20,000']},
+{id:'nikkah',cat:'wedding',name:'Garden Nikkah',img:'nikkah',price:85000,sty:'Soft pastels & crystal light',cap:'Up to 300 guests',venues:'Home lawn · Garden · Indoor',flowers:'Fresh blush + white mix',inc:['Triple floral wall backdrop','Neon couple sign','Crystal candelabra pair','Vintage couple seating','Carpet aisle styling','Setup + takedown'],add:['Live string duo — Rs 25,000','Guest favors table — Rs 12,000','Extended seating decor — Rs 18,000']},
+{id:'bridal',cat:'bridal flowers',name:'Bridal Room Luxe',img:'pink',price:45000,sty:'Blush, petals & candles',cap:'Bridal suite / home',venues:'Home · Hotel suite',flowers:'Fresh rose petals + bouquets',inc:['Full bed floral styling','Petal artwork + candles','Fresh bouquet arrangements','Fairy light canopy','Fragrance styling','Same-day setup'],add:['His & hers bouquets — Rs 8,000','Polaroid corner — Rs 9,000','Champagne-style sparkler tray — Rs 6,000']},
+];
+const VENUES=[
+{name:'Pearl Marquee',area:'DHA Phase 8',cap:'400 – 900 guests',price:'Rs 250k – 450k',img:'baraat',pkgs:'Royal Barat · Signature Stage'},
+{name:'The Garden Estate',area:'KDA Scheme 1',cap:'150 – 400 guests',price:'Rs 120k – 250k',img:'nikkah',pkgs:'Garden Nikkah · Grand Mehndi'},
+{name:'Velvet Banquet',area:'Shahrah-e-Faisal',cap:'200 – 500 guests',price:'Rs 180k – 320k',img:'valima',pkgs:'Candlelight Walima · Signature Stage'},
+];
+const CATS=[
+{name:'Classic Menu',per:1850,items:['Chicken Biryani / Pulao','Chicken Karahi','Seekh Kebab','Naan + Raita + Salad','Soft drinks','Gulab Jamun']},
+{name:'Premium Menu',per:2600,items:['Mutton Biryani','Chicken Makhni + Karahi','BBQ platter (2 items)','Live naan station','Mocktail bar','Kulfi + dessert table']},
+{name:'Royale Menu',per:3400,items:['Full BBQ live station','Mutton + chicken mains (4)','Continental corner','Live chaat + gol gappa','Premium dessert spread','Coffee & kahwa bar']},
+];
+const ADDONS=[{name:'Stage photography lighting',price:25000},{name:'LED dance floor',price:60000},{name:'Cold pyros / sparkular entry',price:35000},{name:'Fresh flower car decoration',price:18000},{name:'Dhol + welcome entry',price:22000},{name:'Photo booth wall',price:28000}];
+const VEST=[350000,185000,250000];
+const GAL=[{img:'hero',cat:'Wedding',cap:'Signature stage · DHA'},{img:'mehndi',cat:'Mehndi',cap:'Grand Mehndi · Lawn'},{img:'cta',cat:'Mehndi',cap:'Jharoka detail wall'},{img:'valima',cat:'Walima',cap:'Candlelight dining'},{img:'baraat',cat:'Wedding',cap:'Royal Barat canopy'},{img:'nikkah',cat:'Engagement',cap:'Garden Nikkah'},{img:'pink',cat:'Fresh Flowers',cap:'Signature pinks · FlowerArt'},{img:'red',cat:'Fresh Flowers',cap:'Classic reds · FlowerArt'},{img:'sun',cat:'Fresh Flowers',cap:'Sunlit mornings · FlowerArt'}];
+
+// IMAGE STORE
+const IMG={hero:'images/hero.jpg',baraat:'images/baraat.jpg',valima:'images/valima.jpg',mehndi:'images/mehndi.jpg',nikkah:'images/nikkah.jpg',pink:'images/pink.jpg',red:'images/red.jpg',sun:'images/sun.jpg',cta:'images/cta.jpg'};
+
+let curFilter='all',catGuests=[300,300,300],galTab='All';
+
+function I(k){return IMG[k]}
+
+// HERO
+document.getElementById('hero-img').src=I('hero');
+
+// PARALLAX + NAV + PROGRESS
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY;
+  const bg=document.getElementById('hero-bg');
+  if(bg)bg.style.transform='translateY('+(y*.18)+'px)';
+  document.getElementById('nav').classList.toggle('scrolled',y>50);
+  const max=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('progress').style.width=max>0?((y/max)*100)+'%':'0';
+},{passive:true});
+
+// CHIPS
+function renderChips(){
+  const c=document.getElementById('chips');
+  c.innerHTML='';
+  [['All','all'],['Wedding','wedding'],['Mehndi & Mayun','mehndi'],['Barat','barat'],['Walima','walima'],['Bridal Room','bridal'],['Fresh Flowers','flowers']].forEach(([l,cat])=>{
+    const b=document.createElement('button');b.className='chip'+(curFilter===cat?' on':'');b.textContent=l;
+    b.onclick=()=>{curFilter=cat;renderChips();renderPkgs();document.getElementById('packages').scrollIntoView({behavior:'smooth'})};
+    c.appendChild(b);
+  });
+}
+
+// PACKAGES
+function renderPkgs(){
+  const g=document.getElementById('pkg-grid');g.innerHTML='';
+  const f=curFilter==='all'?PKGS:PKGS.filter(p=>p.cat.includes(curFilter));
+  f.forEach((p,fi)=>{
+    const oi=PKGS.indexOf(p);
+    const el=document.createElement('article');el.className='pcard';el.setAttribute('data-reveal','');
+    el.innerHTML=`<div class="ph"><img src="${I(p.img)}" alt="${p.name}"><span class="ptag">${p.cat.split(' ')[0]}</span></div>
+    <div class="tx"><h3>${p.name}</h3><div class="meta">${p.sty} · ${p.cap}</div><div class="price">from ${fmt(p.price)}</div>
+    <div class="btns"><button class="btn btn-line" onclick="openModal(${oi})">Details</button><a class="btn btn-dark" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Salam! I\'m interested in the '+p.name+' package (from '+fmt(p.price)+'). Please share details.')}">WhatsApp</a></div></div>`;
+    g.appendChild(el);
+  });
+  initReveal();
+}
+
+// MODAL
+function openModal(i){const p=PKGS[i];document.getElementById('m-img').src=I(p.img);document.getElementById('m-name').textContent=p.name;document.getElementById('m-price').textContent='from '+fmt(p.price);document.getElementById('m-specs').innerHTML=`<div><b>Style</b><br>${p.sty}</div><div><b>Capacity</b><br>${p.cap}</div><div><b>Venues</b><br>${p.venues}</div><div><b>Flowers</b><br>${p.flowers}</div>`;document.getElementById('m-inc').innerHTML=p.inc.map(x=>`<li>${x}</li>`).join('');document.getElementById('m-add').innerHTML=p.add.map(x=>`<li>${x}</li>`).join('');document.getElementById('m-wa').href=`https://wa.me/${WA}?text=${encodeURIComponent('Salam! I\'d like to book the '+p.name+' package (from '+fmt(p.price)+'). My event date is __ at __ (venue). Please confirm availability.')}`;document.getElementById('modal-wrap').classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(){document.getElementById('modal-wrap').classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+// VENUES
+!function(){const g=document.getElementById('venue-grid');VENUES.forEach(v=>{const el=document.createElement('article');el.className='vcard';el.setAttribute('data-reveal','');el.innerHTML=`<div class="ph"><img src="${I(v.img)}" alt="${v.name}"></div><div class="tx"><h3>${v.name}</h3><div class="vrow"><span>Location</span><b>${v.area}</b></div><div class="vrow"><span>Capacity</span><b>${v.cap}</b></div><div class="vrow"><span>Est. venue cost</span><b>${v.price}</b></div><div class="vrow"><span>Best with</span><b>${v.pkgs}</b></div><a class="btn btn-dark" style="display:block;width:100%;text-align:center;margin-top:16px" target="_blank" rel="noopener" href="https://wa.me/${WA}?text=${encodeURIComponent('Salam! Please send a quotation for '+v.name+' ('+v.area+') with a matching decoration package.')}">Request Quotation</a></div>`;g.appendChild(el)})}();
+
+// CATERING
+!function(){const g=document.getElementById('cat-grid');CATS.forEach((c,i)=>{const el=document.createElement('article');el.className='ccard';el.setAttribute('data-reveal','');el.innerHTML=`<h3>${c.name}</h3><div class="per">${fmt(c.per)} per head</div><ul>${c.items.map(x=>`<li>${x}</li>`).join('')}</ul><select class="csel" id="cg-${i}" onchange="catCalc(${i})">${[100,150,200,300,400,500,700,1000].map(g=>`<option${g===300?' selected':''}>${g}</option>`).join('')}</select><div class="ccost">Estimated: <b id="co-${i}"></b></div><button class="btn btn-line" style="width:100%;margin-top:14px" onclick="useCat(${i})">Add to Estimate ↓</button>`;g.appendChild(el)}); CATS.forEach((_,i)=>catCalc(i))}();
+function catCalc(i){document.getElementById('co-'+i).textContent=fmt(CATS[i].per*(+document.getElementById('cg-'+i).value));catGuests[i]=+document.getElementById('cg-'+i).value}
+function useCat(i){document.getElementById('e-cat').selectedIndex=i+1;document.getElementById('e-guests').value=catGuests[i];calc();document.getElementById('estimator').scrollIntoView({behavior:'smooth'})}
+
+// ESTIMATOR SELECTS
+!function(){const ep=document.getElementById('e-pkg');PKGS.forEach((p,i)=>ep.insertAdjacentHTML('beforeend',`<option value="${i}"${p.id==='mehndi'?' selected':''}>${p.name} — from ${fmt(p.price)}</option>`));const ev=document.getElementById('e-venue');ev.insertAdjacentHTML('beforeend','<option value="-1">Own venue / home (Rs 0)</option>');VENUES.forEach((v,i)=>ev.insertAdjacentHTML('beforeend',`<option value="${i}">${v.name} · ${v.area}</option>`));const ec=document.getElementById('e-cat');ec.insertAdjacentHTML('beforeend','<option value="-1">No catering</option>');CATS.forEach((c,i)=>ec.insertAdjacentHTML('beforeend',`<option value="${i}">${c.name} — ${fmt(c.per)}/head</option>`));const ea=document.getElementById('e-addons');ADDONS.forEach((a,i)=>ea.insertAdjacentHTML('beforeend',`<label><input type="checkbox" id="add-${i}" onchange="calc()"> ${a.name} (+${fmt(a.price)})</label>`))}();
+
+function calc(){
+  const p=PKGS[+document.getElementById('e-pkg').value],fm=+document.getElementById('e-flower').value,eg=+document.getElementById('e-guests').value;
+  document.getElementById('e-gval').textContent=eg;
+  const vi=+document.getElementById('e-venue').value,ci=+document.getElementById('e-cat').value;
+  const vc=vi>=0?VEST[vi]:0,cc=ci>=0?CATS[ci].per*eg:0;
+  let ac=0,an=[];ADDONS.forEach((a,i)=>{if(document.getElementById('add-'+i).checked){ac+=a.price;an.push(a.name)}});
+  const dc=Math.round(p.price*fm),tot=dc+vc+cc+ac,lo=Math.round(tot*.95/1000)*1000,hi=Math.round(tot*1.12/1000)*1000;
+  document.getElementById('est-total').textContent=fmt(lo)+' – '+fmt(hi);
+  const lines=[['Decoration ('+p.name+')',dc]];if(vi>=0)lines.push(['Venue ('+VENUES[vi].name+')',vc]);if(ci>=0)lines.push(['Catering × '+eg+' guests',cc]);if(ac)lines.push(['Add-ons ('+an.length+')',ac]);
+  document.getElementById('est-lines').innerHTML=lines.map(l=>`<div><span>${l[0]}</span><span>${fmt(l[1])}</span></div>`).join('');
+  const fn={'1':'Premium Silk','1.15':'Fresh Local (FlowerArt)','1.4':'Fresh Imported (FlowerArt)'};
+  const msg=`Salam! I built my event on your website:\n\n• Event: ${document.getElementById('e-type').value}\n• Package: ${p.name}\n• Venue: ${vi>=0?VENUES[vi].name+' ('+VENUES[vi].area+')':'Own venue'}\n• Flowers: ${fn[String(fm)]||'Fresh Local'}\n• Guests: ${eg}\n• Catering: ${ci>=0?CATS[ci].name:'None'}${an.length?'\n• Add-ons: '+an.join(', '):''}\n• Estimated budget: ${fmt(lo)} – ${fmt(hi)}\n\nPlease confirm availability and final quote.`;
+  document.getElementById('est-wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+}
+calc();
+
+// GALLERY
+function renderGal(cat){
+  galTab=cat;
+  document.querySelectorAll('.gtab').forEach(b=>b.classList.toggle('on',b.dataset.cat===cat));
+  document.getElementById('gal').innerHTML=GAL.filter(g=>cat==='All'||g.cat===cat).map(g=>`<figure class="gitem"><img src="${I(g.img)}" alt="${g.cap}" loading="lazy"><figcaption>${g.cap}</figcaption></figure>`).join('');
+}
+!function(){const t=document.getElementById('gtabs');['All','Wedding','Mehndi','Walima','Engagement','Fresh Flowers'].forEach(cat=>{const b=document.createElement('button');b.className='gtab'+(cat==='All'?' on':'');b.textContent=cat;b.dataset.cat=cat;b.onclick=()=>renderGal(cat);t.appendChild(b)});renderGal('All')}();
+
+// QUOTE
+function quickQuote(){const n=document.getElementById('q-name').value||'—',t=document.getElementById('q-type').value,d=document.getElementById('q-date').value||'TBD',g=document.getElementById('q-guests').value||'—';window.open(`https://wa.me/${WA}?text=${encodeURIComponent(`Salam! I'd like an instant quote.\n\n• Name: ${n}\n• Event: ${t}\n• Date: ${d}\n• Guests: ${g}\n\nPlease share packages and availability.`)}`,'_blank')}
+
+// REVEAL
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.1});
+function initReveal(){document.querySelectorAll('[data-reveal]:not(.in)').forEach(el=>obs.observe(el))}
+
+// INIT
+renderChips();renderPkgs();initReveal();
+</script>
+</body>
+</html>
